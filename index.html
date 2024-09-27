@@ -6,10 +6,10 @@
     <title>Katrina Ying Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Montserrat, sans-serif;
         }
         header {
-            background-color: #f8f8f8;
+            background-color: rgba(224, 247, 250, 0.8);
             padding: 10px 0;
             text-align: center;
             box-shadow: 0px 4px 2px -2px gray;
@@ -23,7 +23,7 @@
         header a:hover {
             color: #007BFF;
         }
-        .about-me, .background-content {
+        .welcome, .background-content {
             margin: 30px 15px;
             font-size: 1.2em;
         }
@@ -37,7 +37,7 @@
     <header>
         <a href="KATRINA_YING.pdf" target="_blank">CV</a>
         <a href="https://www.linkedin.com/in/katrinaying/" target="_blank">LinkedIn</a>
-        <a href="#" id="show-about-me">About Me</a> <!-- Modified Link for About Me -->
+        <a href="#" id="show-welcome">Welcome</a> <!-- Modified Link for Welcome -->
         <a href="#" id="show-background">My Background</a> <!-- Modified Link for Background -->
     </header>
 
@@ -45,8 +45,8 @@
 
     <img src="headshot2.jpg" alt="Katrina Ying Headshot" style="display: block; margin: 20px auto; width: 150px; border-radius: 50%;">
 
-    <!-- About Me Section -->
-    <section class="about-me" id="about-me">
+    <!-- Welcome Section -->
+    <section class="welcome" id="welcome">
         <h2>Welcome!</h2>
         <p>
             Reliable, problem-solving researcher experienced in market research, competitive analysis, and data analysis in a fast-paced environment. 
@@ -75,26 +75,27 @@
     </section>
 
     <script>
-        // Show "About Me" section and hide "Background" content
-        document.getElementById('show-about-me').addEventListener('click', function(event) {
+        // Show "Welcome" section and hide "Background" content
+        document.getElementById('show-welcome').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent link default behavior
-            document.getElementById('about-me').style.display = 'block'; // Show About Me section
+            document.getElementById('welcome').style.display = 'block'; // Show Welcome section
             document.getElementById('background-content').style.display = 'none'; // Hide Background section
         });
 
-        // Show "Background" content and hide "About Me" section
+        // Show "Background" content and hide "Welcome" section
         document.getElementById('show-background').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent link default behavior
-            document.getElementById('about-me').style.display = 'none'; // Hide About Me section
+            document.getElementById('welcome').style.display = 'none'; // Hide Welcome section
             document.getElementById('background-content').style.display = 'block'; // Show Background content
         });
 
-        // Back to Home (show About Me, hide Background)
+        // Back to Home (show Welcome, hide Background)
         document.getElementById('back-to-home').addEventListener('click', function(event) {
             event.preventDefault(); // Prevent link default behavior
-            document.getElementById('about-me').style.display = 'block'; // Show About Me section
+            document.getElementById('welcome').style.display = 'block'; // Show Welcome section
             document.getElementById('background-content').style.display = 'none'; // Hide Background content
         });
     </script>
 </body>
 </html>
+
