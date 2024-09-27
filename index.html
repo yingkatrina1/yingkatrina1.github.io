@@ -6,11 +6,11 @@
     <title>Katrina Ying Website</title>
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: Times New Roman, serif; /* Changed to Times New Roman */
         }
         header {
-            background-color: rgba(173, 216, 208, 0.8); /* Muted greenish-blue with 80% transparency */
-            padding: 20px 0; /* Increased padding for more room */
+            background-color: rgba(140, 230, 233, 0.8); /* Muted blue-green */
+            padding: 20px 0; /* Increased header height */
             text-align: center;
             box-shadow: 0px 4px 2px -2px gray;
         }
@@ -35,10 +35,10 @@
 </head>
 <body>
     <header>
+        <a href="#" id="show-welcome">Welcome</a> <!-- Moved Welcome link to first -->
         <a href="KATRINA_YING.pdf" target="_blank">CV</a>
         <a href="https://www.linkedin.com/in/katrinaying/" target="_blank">LinkedIn</a>
-        <a href="#" id="show-welcome">Welcome</a>
-        <a href="#" id="show-background">My Background</a>
+        <a href="#" id="show-background">My Background</a> <!-- Modified Link for Background -->
     </header>
 
     <h1>Katrina Ying's Portfolio</h1>
@@ -71,7 +71,6 @@
         <p>
             In my free time I love to read books and listen to music!
         </p>
-        <a href="#" id="back-to-home">← Back to Home</a> <!-- Back to main page link -->
     </section>
 
     <script>
@@ -88,13 +87,7 @@
             document.getElementById('welcome').style.display = 'none'; // Hide Welcome section
             document.getElementById('background-content').style.display = 'block'; // Show Background content
         });
-
-        // Back to Home (show Welcome, hide Background)
-        document.getElementById('back-to-home').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent link default behavior
-            document.getElementById('welcome').style.display = 'block'; // Show Welcome section
-            document.getElementById('background-content').style.display = 'none'; // Hide Background content
-        });
     </script>
 </body>
 </html>
+
