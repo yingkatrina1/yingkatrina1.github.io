@@ -8,14 +8,12 @@
         body {
             font-family: Arial, sans-serif;
         }
-        /* Header styling */
         header {
             background-color: #f8f8f8;
             padding: 10px 0;
             text-align: center;
             box-shadow: 0px 4px 2px -2px gray;
         }
-        /* Links in header */
         header a {
             margin: 0 15px;
             text-decoration: none;
@@ -25,26 +23,30 @@
         header a:hover {
             color: #007BFF;
         }
-        /* About Me section styling */
-        .about-me {
+        .about-me, .background-content {
             margin: 30px 15px;
             font-size: 1.2em;
+        }
+        /* Initially hide the background content */
+        .background-content {
+            display: none;
         }
     </style>
 </head>
 <body>
     <header>
         <a href="KATRINA_YING.pdf" target="_blank">CV</a>
-        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
-         <a href="background.html">My Background</a> <!-- New Link Background -->
+        <a href="https://www.linkedin.com/in/katrinaying/" target="_blank">LinkedIn</a>
+        <a href="#" id="show-about-me">About Me</a> <!-- Modified Link for About Me -->
+        <a href="#" id="show-background">My Background</a> <!-- Modified Link for Background -->
     </header>
 
     <h1>Welcome to Katrina Ying's Portfolio</h1>
 
-    <!-- Add the image here -->
     <img src="headshot2.jpg" alt="Katrina Ying Headshot" style="display: block; margin: 20px auto; width: 150px; border-radius: 50%;">
-    
-    <section class="about-me">
+
+    <!-- About Me Section -->
+    <section class="about-me" id="about-me">
         <h2>About Me</h2>
         <p>
             Reliable, problem-solving researcher experienced in market research, competitive analysis, and data analysis in a fast-paced environment. 
@@ -56,8 +58,43 @@
             Check out my <a href="KATRINA_YING.pdf" target="_blank">CV</a> and connect with me on <a href="https://www.linkedin.com/in/katrinaying/" target="_blank">LinkedIn</a> here or through the links above.
         </p>
     </section>
+
+    <!-- Background Section (initially hidden) -->
+    <section class="background-content" id="background-content">
+        <h2>My Background</h2>
+        <p>
+            I am a dedicated and detail-oriented researcher with experience in market analysis, competitive research, and data-driven insights. 
+            I have worked extensively with tools such as Python, SQL, and R, applying machine learning methods and delivering actionable insights.
+            Additionally, I am experienced in Power Platform tools such as Power Automate and Power Apps, 
+            having developed a web content summary app that enhances process automation.
+        </p>
+        <p>
+            In my free time I love to read books and listen to music!
+        </p>
+        <a href="#" id="back-to-home">← Back to Home</a> <!-- Back to main page link -->
+    </section>
+
+    <script>
+        // Show "About Me" section and hide "Background" content
+        document.getElementById('show-about-me').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent link default behavior
+            document.getElementById('about-me').style.display = 'block'; // Show About Me section
+            document.getElementById('background-content').style.display = 'none'; // Hide Background section
+        });
+
+        // Show "Background" content and hide "About Me" section
+        document.getElementById('show-background').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent link default behavior
+            document.getElementById('about-me').style.display = 'none'; // Hide About Me section
+            document.getElementById('background-content').style.display = 'block'; // Show Background content
+        });
+
+        // Back to Home (show About Me, hide Background)
+        document.getElementById('back-to-home').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent link default behavior
+            document.getElementById('about-me').style.display = 'block'; // Show About Me section
+            document.getElementById('background-content').style.display = 'none'; // Hide Background content
+        });
+    </script>
 </body>
 </html>
-
-
-
