@@ -6,16 +6,15 @@
     <title>Katrina Ying Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, serif; /* Changed to Times New Roman */
         }
-        /* Header styling */
         header {
-            background-color: #f8f8f8;
-            padding: 10px 0;
+            background-color: rgb(211, 234, 234); /* More blue background */
+            padding: 20px 0; /* Increased header height */
             text-align: center;
             box-shadow: 0px 4px 2px -2px gray;
+            font-size: 1.2em; /* Increased header font size */
         }
-        /* Links in header */
         header a {
             margin: 0 15px;
             text-decoration: none;
@@ -25,26 +24,31 @@
         header a:hover {
             color: #007BFF;
         }
-        /* About Me section styling */
-        .about-me {
+        .welcome, .background-content {
             margin: 30px 15px;
             font-size: 1.2em;
+        }
+        /* Initially hide the background content */
+        .background-content {
+            display: none;
         }
     </style>
 </head>
 <body>
     <header>
+        <a href="#" id="show-welcome">Welcome</a> <!-- Moved Welcome link to first -->
         <a href="KATRINA_YING.pdf" target="_blank">CV</a>
-        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/katrinaying/" target="_blank">LinkedIn</a>
+        <a href="#" id="show-background">My Background</a> <!-- Modified Link for Background -->
     </header>
 
-    <h1>Welcome to Katrina Ying's Portfolio</h1>
+    <h1>Katrina Ying's Portfolio</h1>
 
-    <!-- Add the image here -->
-    <img src="headshot2.jpg" alt="Katrina Ying Headshot" style="display: block; margin: 20px auto; width: 150px; border-radius: 50%;">
-    
-    <section class="about-me">
-        <h2>About Me</h2>
+    <img src="headshot2.jpg" alt="Katrina Ying Headshot" style="display: block; margin: 20px auto; width: 200px; border-radius: 50%;">
+
+    <!-- Welcome Section -->
+    <section class="welcome" id="welcome">
+        <h2>Welcome!</h2>
         <p>
             Reliable, problem-solving researcher experienced in market research, competitive analysis, and data analysis in a fast-paced environment. 
             Expertise in Python, SQL, and R, as well as machine learning methods. Excellent knowledge in conducting literature searches and writing 
@@ -55,6 +59,36 @@
             Check out my <a href="KATRINA_YING.pdf" target="_blank">CV</a> and connect with me on <a href="https://www.linkedin.com/in/katrinaying/" target="_blank">LinkedIn</a> here or through the links above.
         </p>
     </section>
+
+    <!-- Background Section (initially hidden) -->
+    <section class="background-content" id="background-content">
+        <h2>My Background</h2>
+        <p>
+            I am a dedicated and detail-oriented researcher with experience in market analysis, competitive research, and data-driven insights. 
+            I have worked extensively with tools such as Python, SQL, and R, applying machine learning methods and delivering actionable insights.
+            Additionally, I am experienced in Power Platform tools such as Power Automate and Power Apps, 
+            having developed a web content summary app that enhances process automation.
+        </p>
+        <p>
+            In my free time I love to read books and listen to music!
+        </p>
+    </section>
+
+    <script>
+        // Show "Welcome" section and hide "Background" content
+        document.getElementById('show-welcome').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent link default behavior
+            document.getElementById('welcome').style.display = 'block'; // Show Welcome section
+            document.getElementById('background-content').style.display = 'none'; // Hide Background section
+        });
+
+        // Show "Background" content and hide "Welcome" section
+        document.getElementById('show-background').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent link default behavior
+            document.getElementById('welcome').style.display = 'none'; // Hide Welcome section
+            document.getElementById('background-content').style.display = 'block'; // Show Background content
+        });
+    </script>
 </body>
 </html>
 
